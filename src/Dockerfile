@@ -1,5 +1,5 @@
 # Paso 1: Compilar la aplicación en Node.js
-FROM node:2-alpine AS build
+FROM node:22-alpine AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
