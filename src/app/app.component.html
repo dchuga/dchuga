@@ -1,0 +1,19 @@
+<nav style="background-color: #0c4a6e; padding: 1rem; display: flex; gap: 1rem; justify-content: center;">
+  <button style="width: auto;" (click)="cambiarVista('dashboard')">Inicio</button>
+  <button style="width: auto;" (click)="cambiarVista('calc')">Operaciones</button>
+  <button style="width: auto;" (click)="cambiarVista('imc')">IMC</button>
+  <button style="width: auto;" (click)="cambiarVista('iess')">IESS</button>
+  <button style="width: auto;" (click)="cambiarVista('prestamo')">Amortización</button>
+</nav>
+
+<main style="padding: 2rem; display: flex; justify-content: center; align-items: center; min-height: 70vh;">
+  <div *ngIf="vistaActiva === 'dashboard'" class="card" style="text-align: center;">
+    <h2>Panel Académico - ESPE</h2>
+    <p>Bienvenido Dario. Seleccione una opción del menú superior para interactuar con los procesos modulares de la aplicación.</p>
+  </div>
+
+  <app-operaciones-basicas *ngIf="vistaActiva === 'calc'"></app-operaciones-basicas>
+  <app-calculo-imc *ngIf="vistaActiva === 'imc'"></app-calculo-imc>
+  <app-calculo-iess *ngIf="vistaActiva === 'iess'"></app-calculo-iess>
+  <app-amortizacion-prestamo *ngIf="vistaActiva === 'prestamo'"></app-amortizacion-prestamo>
+</main>

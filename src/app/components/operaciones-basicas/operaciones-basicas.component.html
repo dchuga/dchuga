@@ -1,0 +1,24 @@
+<div class="card">
+  <h2>Operaciones Básicas</h2>
+  <div class="form-group">
+    <label>Número 1:</label>
+    <input type="number" [(ngModel)]="num1" placeholder="Ej: 10">
+  </div>
+  <div class="form-group">
+    <label>Número 2:</label>
+    <input type="number" [(ngModel)]="num2" placeholder="Ej: 5">
+  </div>
+  <div class="form-group">
+    <label>Operación:</label>
+    <select [(ngModel)]="operacion">
+      <option value="+">Suma (+)</option>
+      <option value="-">Resta (-)</option>
+      <option value="*">Multiplicación (*)</option>
+      <option value="/">División (/)</option>
+    </select>
+  </div>
+  <button (click)="calcular()">Calcular</button>
+
+  <div *ngIf="error" class="alert error">{{ error }}</div>
+  <div *ngIf="resultado !== null" class="alert success">El resultado es: {{ resultado }}</div>
+</div>

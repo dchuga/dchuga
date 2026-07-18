@@ -1,0 +1,17 @@
+<div class="card">
+  <h2>Cálculo de IMC</h2>
+  <div class="form-group">
+    <label>Peso (kg):</label>
+    <input type="number" [(ngModel)]="peso">
+  </div>
+  <div class="form-group">
+    <label>Altura (cm):</label>
+    <input type="number" [(ngModel)]="altura">
+  </div>
+  <button (click)="calcular()">Calcular IMC</button>
+
+  <div *ngIf="imc" class="alert success">
+    <p>Su IMC es: <strong>{{ imc }}</strong></p>
+    <p>Categoría: <strong>{{ categoria }}</strong></p>
+  </div>
+</div>

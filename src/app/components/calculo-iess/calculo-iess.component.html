@@ -1,0 +1,20 @@
+<div class="card">
+  <h2>Cálculo de Aportaciones IESS</h2>
+  <div class="form-group">
+    <label>Sueldo Bruto ($):</label>
+    <input type="number" [(ngModel)]="sueldo">
+  </div>
+  <div class="form-group">
+    <label>Tipo de Sector:</label>
+    <select [(ngModel)]="tipoAfiliacion">
+      <option value="privado">Sector Privado (9.45%)</option>
+      <option value="publico">Sector Público (11.45%)</option>
+    </select>
+  </div>
+  <button (click)="calcular()">Calcular Aportes</button>
+
+  <div *ngIf="aportePersonal" class="alert success">
+    <p>Aporte Personal IESS: <strong>${{ aportePersonal }}</strong></p>
+    <p>Sueldo Neto a Recibir: <strong>${{ sueldoNeto }}</strong></p>
+  </div>
+</div>

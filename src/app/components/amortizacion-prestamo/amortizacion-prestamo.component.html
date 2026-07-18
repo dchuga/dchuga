@@ -1,0 +1,20 @@
+<div class="card">
+  <h2>Amortización de Préstamos (Sistema Francés)</h2>
+  <div class="form-group">
+    <label>Monto del Préstamo ($):</label>
+    <input type="number" [(ngModel)]="monto">
+  </div>
+  <div class="form-group">
+    <label>Tasa de Interés Anual (%):</label>
+    <input type="number" [(ngModel)]="interesAnual">
+  </div>
+  <div class="form-group">
+    <label>Plazo (Meses):</label>
+    <input type="number" [(ngModel)]="plazoMeses">
+  </div>
+  <button (click)="calcular()">Calcular Cuota</button>
+
+  <div *ngIf="cuotaMensual" class="alert success">
+    <p>Su cuota mensual fija es de: <strong>${{ cuotaMensual }}</strong></p>
+  </div>
+</div>
