@@ -1,23 +1,39 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f1f5f9;
-  color: #1e293b;
+
+@media (max-width: 768px) {
+  /* Hacer que el contenedor principal ocupe todo el ancho */
+  .container, body {
+    padding: 10px;
+  }
+
+  
+  .grid-container, .row, .dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  
+  input, select, button {
+    width: 100% !important;
+    box-sizing: border-box;
+    font-size: 16px; /* Evita que iOS haga zoom automático molesto */
+  }
+
+  
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  
+  h1 { font-size: 1.8rem; text-align: center; }
+  h2 { font-size: 1.4rem; }
+  
+  
+  .card {
+    margin-bottom: 15px;
+    padding: 15px;
+  }
 }
-.card {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  max-width: 450px;
-  margin: 1rem auto;
-}
-h2 { color: #0c4a6e; margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
-.form-group { display: flex; flex-direction: column; gap: 0.25rem; margin-bottom: 1rem; }
-label { font-weight: 600; color: #475569; }
-input, select { padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 1rem; }
-button { background-color: #0284c7; color: white; padding: 0.6rem; border: none; border-radius: 4px; font-size: 1rem; font-weight: bold; cursor: pointer; width: 100%; transition: background 0.2s; }
-button:hover { background-color: #0369a1; }
-.alert { padding: 0.75rem; border-radius: 4px; font-weight: bold; margin-top: 1rem; }
-.success { background-color: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
-.error { background-color: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
